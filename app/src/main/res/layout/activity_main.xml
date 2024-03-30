@@ -1,48 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2c187e"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="16dp">
+    tools:context=".MainActivity">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#2c187e">
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/background_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/button_background" />
+    <Button
+        android:id="@+id/btnLearn"
+        android:layout_width="260dp"
+        android:layout_height="87dp"
+        android:background="@drawable/button_background"
+        android:text="Learn"
+        android:textAppearance="@style/ButtonTextStyle"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnSingleCardReading"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.5" />
 
-        <Button
-            android:id="@+id/btnLearn"
-            android:layout_width="260dp"
-            android:layout_height="87dp"
-            android:background="@drawable/button_background"
-            android:foregroundGravity="center"
-            android:text="Learn"
-            android:textAppearance="@style/ButtonTextStyle"
-            android:textSize="30sp" />
+    <Button
+        android:id="@+id/btnSingleCardReading"
+        android:layout_width="260dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:text="Single Card Reading"
+        android:textAppearance="@style/ButtonTextStyle"
+        android:textSize="27sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLearn"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-
-        <Button
-            android:id="@+id/btnSingleCardReading"
-            android:layout_width="260dp"
-            android:layout_height="87dp"
-            android:layout_gravity="center|center_horizontal|center_vertical"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/button_background"
-            android:onClick="onSingleCardClicked"
-            android:text="Single Card Reading"
-            android:textAppearance="@style/ButtonTextStyle"
-            android:textSize="27sp" />
-
-    </FrameLayout>
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
