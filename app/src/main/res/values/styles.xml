@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonTextStyle">
+    <item name="android:textColor">#d8b586</item>
+    <item name="android:fontFamily">@font/sparkystoneyreg</item>
+</style>
+</resources>
