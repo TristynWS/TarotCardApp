@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TarotCardApp</string>
+    <string name="tarot_card_image" />
+    <string name="single_card_reading">Single Card Reading</string>
+    <string name="todo">TODO</string>
+    <string name="learn">Learn</string>
 </resources>

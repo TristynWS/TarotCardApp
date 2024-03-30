@@ -4,5 +4,7 @@
     <style name="ButtonTextStyle">
     <item name="android:textColor">#d8b586</item>
     <item name="android:fontFamily">@font/sparkystoneyreg</item>
-</style>
+    </style>
+
+    <style name="AppTheme"></style>
 </resources>
