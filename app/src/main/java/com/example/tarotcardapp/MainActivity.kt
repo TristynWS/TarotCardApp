@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.content.Intent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.example.tarotcardapp.ui.theme.SingleCardActivity
+import com.example.tarotcardapp.SingleCardActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,8 +21,6 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, SingleCardActivity::class.java)
         startActivity(intent)
     }
-}
-class SingleCardActivity {
 }
 class LearnActivity {
 }
