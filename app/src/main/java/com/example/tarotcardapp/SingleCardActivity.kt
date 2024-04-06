@@ -1,13 +1,18 @@
-package com.example.tarotcardapp // Adjusted package to match the manifest
+package com.example.tarotcardapp
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ObjectAnimator
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import android.widget.ImageView
 import android.view.View
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import kotlin.random.Random
 
 class SingleCardActivity : AppCompatActivity() {
 
-    // List of links for 22 major arcana cards
+    private var isCardFaceUp = true
+
     private val cards = listOf(
         R.drawable.fool0, R.drawable.magician1, R.drawable.priestess2,
         R.drawable.empress3, R.drawable.emperor4, R.drawable.hierophant5,
@@ -30,10 +35,34 @@ class SingleCardActivity : AppCompatActivity() {
         val randomCardDrawable = cards.random()
         cardFront.setImageResource(randomCardDrawable)
 
-        cardBack.setOnClickListener {
-            // Placeholder for your card flip logic
-            cardBack.visibility = View.GONE
-            cardFront.visibility = View.VISIBLE
+        if (Random.nextBoolean()) { // Randomly decide if the card should be reversed
+            cardFront.rotation = 180f // Rotate the card to show it upside down
+        } else {
+            cardFront.rotation = 0f // Normal orientation
         }
+
+        cardBack.setOnClickListener {
+            if (isCardFaceUp) {
+                flipCard(cardBack, cardFront)
+            } else {
+                flipCard(cardFront, cardBack)
+            }
+            isCardFaceUp = !isCardFaceUp
+        }
+    }
+
+    private fun flipCard(visibleView: View, invisibleView: View) {
+        val animOut = ObjectAnimator.ofFloat(visibleView, "rotationY", 0f, 90f).apply {
+            duration = 250 // Half duration of full flip
+            addListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    visibleView.visibility = View.GONE
+                    invisibleView.visibility = View.VISIBLE
+                    invisibleView.rotationY = -90f
+                    ObjectAnimator.ofFloat(invisibleView, "rotationY", -90f, 0f).setDuration(250).start()
+                }
+            })
+        }
+        animOut.start()
     }
 }

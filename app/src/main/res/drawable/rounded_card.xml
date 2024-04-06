@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" /> <!-- Assuming the card itself has a background -->
+    <corners android:radius="16dp" /> <!-- Adjust the radius for desired roundness -->
+</shape>

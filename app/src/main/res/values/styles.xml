@@ -6,5 +6,7 @@
     <item name="android:fontFamily">@font/sparkystoneyreg</item>
     </style>
 
-    <style name="AppTheme"></style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    </style>
+
 </resources>

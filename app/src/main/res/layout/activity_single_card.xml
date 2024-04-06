@@ -3,22 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.theme.SingleCardActivity">
+    android:background="#000111">
 
     <ImageView
         android:id="@+id/cardBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="333dp"
+        android:layout_height="555dp"
         android:layout_gravity="center"
+        android:layout_margin="8dp"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/background_image" />
 
     <ImageView
         android:id="@+id/cardFront"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="333dp"
+        android:layout_height="555dp"
         android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/rounded_card"
         android:visibility="gone"
         android:src="@drawable/fool0"
         android:contentDescription="TODO" /> <!-- Placeholder, will change in code -->
