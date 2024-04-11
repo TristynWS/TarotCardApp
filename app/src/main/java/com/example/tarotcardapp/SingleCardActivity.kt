@@ -14,14 +14,7 @@ class SingleCardActivity : AppCompatActivity() {
     private var isCardFaceUp = true
 
     private val cards = listOf(
-        R.drawable.fool0, R.drawable.magician1, R.drawable.priestess2,
-        R.drawable.empress3, R.drawable.emperor4, R.drawable.hierophant5,
-        R.drawable.lovers6, R.drawable.chariot7, R.drawable.strength8,
-        R.drawable.hermit9, R.drawable.fortune10, R.drawable.justice11,
-        R.drawable.hanged12, R.drawable.death13, R.drawable.temperance14,
-        R.drawable.devil15, R.drawable.tower16, R.drawable.star17,
-        R.drawable.moon18, R.drawable.sun19, R.drawable.judgement20,
-        R.drawable.world21
+        R.drawable.fool0,
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
